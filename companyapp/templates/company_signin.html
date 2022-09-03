@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fashion Store</title>
+</head>
+<body>
+
+
+
+  <nav class="border-b border-gray-300">
+    <div class="max-w-6xl mx-auto py-4 px-6 xl:px-0 flex items-center justify-between">
+      <div class="menu-left flex items-center space-x-6">
+        <a href="" class="py-4 text-lg text-green-500 font-semibold">FASHION STORE</a>
+        <ul class="flex items-center space-x-4"> 
+          <li><a href="{% url 'company_signin' %}">Sign In</a></li>
+        </ul>
+      </div>
+      <div class="menu-right flex items-center space-x-4">
+        <a href=""><!--profile url-->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+
+  
+  <main>
+    <div class="max-w-lg mx-auto flex flex-wrap p-6">
+        <div class="w-full bg-gray-100 p-6 rounded-xl">
+            <h1 class="mb-6 text-2xl">SIGN IN</h1>
+            <form action="." method="post" class="space-y-3">
+                {% csrf_token %}
+                <div>
+                    <label for="">Email</label>
+                    <input type="email" name="email" class="w-full mt-2 py-4 px-6 bg-white rounded-xl">
+                </div>
+                <div>
+                    <label for="">Password</label>
+                    <input type="password" name="password" class="w-full mt-2 py-4 px-6 bg-white rounded-xl">
+                </div>
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="p-6 bg-red-200 text-red-800 rounded-xl">
+                            <p>{{message}}</p>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                <div>
+                    <a class="text-blue-500" href="{% url 'company_signup' %}">dont have an account ... ?</a>
+                </div>
+                <div>
+                    <button class="py-4 px-6 rounded-xl text-white bg-green-500 hover:bg-green-700">Sign In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+  </main>
+  <script src="https://cdn.tailwindcss.com"></script>
+</body>
+</html>
