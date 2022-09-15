@@ -42,7 +42,7 @@
         <div class="mb-6">
             <strong>Name : </strong>{{logged_user.Name}} <br>
             <strong>Email : </strong>{{logged_user.Email}} <br>
-            <a href="{% url 'edit_profile' user.id %}" class="inline-block mt-4 py-2 px-6 rounded-xl text-white bg-purple-500">Edit</a>
+            <a href="{% url 'edit_profile' logged_user.id %}" class="inline-block mt-4 py-2 px-6 rounded-xl text-white bg-purple-500">Edit</a>
         </div>
         <hr>
         <h2 class="my-6 text-xl">My orders</h2>
